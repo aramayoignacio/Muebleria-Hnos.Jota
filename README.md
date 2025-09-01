@@ -16,4 +16,4 @@
 
 ## Integrantes del Proyecto
 - Ignacio Javier Aramayo Marca
-
+- Céspedes, Mariano Joaquin

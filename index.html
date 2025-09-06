@@ -7,68 +7,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Mueblería Hermanos Jota</h1>
+    <header class="navbar">
+        <div class="navbar-logo">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Logo Hermanos Jota">
+            </a>
         </div>
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Catálogo</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item"><a href="productos.html" class="nav-link">CATÁLOGO</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
             </ul>
         </nav>
-        <div class="cart-icon">
-            <a href="carrito.html">
+        <div class="navbar-cart">
+            <a href="carrito.html" class="cart-icon">
                 <img src="./assets/carrito.png" alt="Carrito">
                 <span id="cart-count">0</span>
             </a>
         </div>
     </header>
-
     <main>
         <section class="hero-banner">
-            <img src="./assets/logo.svg" alt="Muebles de calidad" class="hero-image">
+           <!-- <img src="./assets/logo.svg" alt="Muebles de calidad" class="hero-image">-->
             <div class="hero-text">
-                <h2>Calidad y Diseño en Cada Pieza</h2>
-                <p>Descubre nuestros muebles de autor, diseñados para tu hogar.</p>
+                <h1> HERMANOS  </h1>
+                <h1> JOTA</h1>
+                <h2> "Cada pieza cuenta la historia de manos expertas y materias nobles"</h2>
             </div>
         </section>
 
         <section class="featured-products">
             <h2>Productos Destacados</h2>
-            <div class="product-grid">
-                
-                <div class="product-card">
-                    <img src="producto1.jpg" alt="Producto 1">
-                    <h3>Nombre del Producto 1</h3>
-                    <p>Descripción breve del producto 1.</p>
-                    <a href="producto.html?id=1" class="btn">Ver Detalle</a>
-                </div>
-                <div class="product-card">
-                    <img src="producto2.jpg" alt="Producto 2">
-                    <h3>Nombre del Producto 2</h3>
-                    <p>Descripción breve del producto 2.</p>
-                    <a href="producto.html?id=2" class="btn">Ver Detalle</a>
-                </div>
-                <div class="product-card">
-                    <img src="producto3.jpg" alt="Producto 3">
-                    <h3>Nombre del Producto 3</h3>
-                    <p>Descripción breve del producto 3.</p>
-                    <a href="producto.html?id=3" class="btn">Ver Detalle</a>
-                </div>
-                <div class="product-card">
-                    <img src="producto4.jpg" alt="Producto 4">
-                    <h3>Nombre del Producto 4</h3>
-                    <p>Descripción breve del producto 4.</p>
-                    <a href="producto.html?id=4" class="btn">Ver Detalle</a>
-                </div>
+            <div id="products-container" class="products-container">
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Hermanos Joda Forniture.</p>
+        <p>&copy; 2025 Hermanos Jota Forniture.</p>
         <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
         <p>Email: brand@hermanosjota.com</p>
     </footer>

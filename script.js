@@ -79,3 +79,70 @@ async function init(){
     }
 }
 document.addEventListener('DOMContentLoaded',init);
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+    
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', (e) => {
+        // Previene el envío del formulario por defecto
+        e.preventDefault();
+
+        // Oculta  mensajes de error al inicio
+        hideAllErrors();
+        
+        let isValid = true;
+
+        // Valida el nombre
+        if (nameInput.value.trim() === '') {
+            nameError.textContent = 'Por favor, ingresa tu nombre.';
+            nameError.classList.add('show-error');
+            isValid = false;
+        }
+
+        // Valida el email
+        if (emailInput.value.trim() === '') {
+            emailError.textContent = 'Por favor, ingresa tu email.';
+            emailError.classList.add('show-error');
+            isValid = false;
+        } else if (!validateEmail(emailInput.value)) {
+            emailError.textContent = 'Por favor, ingresa un email válido.';
+            emailError.classList.add('show-error');
+            isValid = false;
+        }
+        
+        // Valida el mensaje
+        if (messageInput.value.trim() === '') {
+            messageError.textContent = 'Por favor, ingresa tu mensaje.';
+            messageError.classList.add('show-error');
+            isValid = false;
+        }
+
+        //  muestra el mensaje de éxito
+        if (isValid) {
+            form.style.display = 'none'; // Oculta el formulario
+            successMessage.textContent = '¡Gracias por tu mensaje! Nos pondremos en contacto pronto.';
+            successMessage.classList.add('show-success');
+        }
+    });
+
+    //validar el formato de email
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    //  ocultar todos los mensajes de error
+    function hideAllErrors() {
+        nameError.classList.remove('show-error');
+        emailError.classList.remove('show-error');
+        messageError.classList.remove('show-error');
+    }
+});
